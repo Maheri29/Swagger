@@ -100,23 +100,23 @@ paths:
         - Students
       summary: Delete the specified student
       operationId: deleteStudent
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-      responses:
-        200:
-          description: Success
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "Returns the id of the deleted student"
-        400:
-          description: "bad request"
-          content: {}       
+
+  /courses:
+    get:
+      tags:
+        - Courses
+      summary: Get a list of courses
+      operationId: getCourses 
+    post:
+      tags:
+        - Courses
+      summary: Create new courses
+  /courses/{id}:
+     get:
+      tags:
+        - Courses
+      summary: Get course number id  
+      
 components:
   schemas:
     Students:
