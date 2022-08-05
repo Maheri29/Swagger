@@ -94,7 +94,29 @@ paths:
                   $ref: '#/components/schemas/Students'
         400:
           description: Bad Request
-          content: {}     
+          content: {}    
+    delete:
+      tags:
+        - Students
+      summary: Delete the specified student
+      operationId: deleteStudent
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+      responses:
+        200:
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Returns the id of the deleted student"
+        400:
+          description: "bad request"
+          content: {}       
 components:
   schemas:
     Students:
@@ -104,8 +126,7 @@ components:
           type: string
         group: 
           type: string
-        id:
-          type: string
+      
     NewStudents:
       type: object
       properties:
@@ -113,3 +134,6 @@ components:
           type: string
         group:
           type: string
+          
+
+          
